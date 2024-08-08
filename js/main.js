@@ -49,6 +49,7 @@ function obtencionDatos() {
 	let alumno = {
 		nombre: nombre,
 		notas: [],
+		average_note: 0,
 	};
 	cargarNotas(
 		alumno,
@@ -57,22 +58,27 @@ function obtencionDatos() {
 }
 
 function cargarNotas(alumno, cantidad) {
-	let notas = [];
+	let notes = [];
 	for (let index = 0; index < cantidad; index++) {
-		let nota = prompt("Ingrese la nota");
-		notas.push(nota);
+		let nota = Number(prompt("Ingrese la nota"));
+		notes.push(nota);
 	}
-	alumno.notas = notas;
+	// Obtener el Valor total de Notas
+	let total_notes = notes.reduce((total, actual) => total + actual, 0);
+
+	// Obtener Promedio de Notas
+	alumno.average_note = total_notes / cantidad;
+
+	alumno.notas = notes;
 	students_notes.push(alumno);
 }
 
 // Programa
 
-/* do {
+do {
 	obtencionDatos();
 } while (window.confirm("Desea Cargar otro alumno?"));
 
 let objeto = JSON.stringify(students_notes);
 alert(objeto);
 console.log(objeto);
- */
