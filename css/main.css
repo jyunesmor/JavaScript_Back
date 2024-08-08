@@ -1,7 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,600;1,400;1,600&family=Dela+Gothic+One&family=Encode+Sans+SC:wght@200;400&family=M+PLUS+Code+Latin:wght@200;400&family=Oswald:wght@300;400&family=PT+Sans+Narrow:wght@400;700&family=Roboto+Flex:opsz,wght@8..144,200;8..144,400&display=swap");
+/*! Media_Query 1200px */
+/*! Media_Query 900px */
+/*! Media_Query 750px */
+/*! Media_Query 600px */
+/*! Media_Query 450px */
+/* ----- Mixins ----- */
+/* ----- Extends ----- */
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "PT Sans Narrow", sans-serif;
 }
 * body {
   display: grid;
@@ -37,14 +46,45 @@
   gap: 20px;
 }
 * body header .boxMenu .dates #place {
-  background-color: lightblue;
+  font-size: 1.2rem;
 }
 * body header .boxMenu .dates #date {
-  background-color: lightgreen;
+  font-size: 1rem;
 }
 * body header .boxMenu .menu {
   width: 75%;
-  background-color: chocolate;
+  height: 100%;
+}
+* body header .boxMenu .menu ul {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+}
+* body header .boxMenu .menu ul li {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+* body header .boxMenu .menu ul li a {
+  text-decoration: none;
+  color: black;
+}
+* body header .boxMenu .menu ul .filterInput {
+  display: flex;
+  gap: 15px;
+}
+* body header .boxMenu .menu ul .filterInput input {
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(246, 200, 199, 0.3);
+}
+* body header .boxMenu .menu ul .filterInput input[type=button] {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
 }
 * body main {
   margin: auto;

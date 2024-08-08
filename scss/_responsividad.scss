@@ -1,0 +1,64 @@
+/*! Media_Query 1200px */
+
+@mixin desktop {
+  @media (901px <=width <=1200px) {
+    @content;
+  }
+}
+
+/*! Media_Query 900px */
+
+@mixin notebook {
+  @media (751px <=width <=900px) {
+    @content;
+  }
+}
+
+
+/*! Media_Query 750px */
+
+@mixin tablets {
+  @media (601px <=width <=750px) {
+    @content;
+  }
+}
+
+/*! Media_Query 600px */
+
+@mixin mobile600 {
+  @media (451px <=width <=600px) {
+    @content;
+  }
+}
+
+/*! Media_Query 450px */
+
+@mixin mobile {
+  @media (200px <=width <=450px) {
+    @content;
+  }
+}
+
+/* ----- Mixins ----- */
+
+@mixin flex ($display, $justify, $align) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flexColumn ($display, $direction, $justify, $align) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+/* ----- Extends ----- */
+
+%flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -68,8 +68,11 @@ function cargarNotas(alumno, cantidad) {
 
 // Programa
 
-do {
+/* do {
 	obtencionDatos();
 } while (window.confirm("Desea Cargar otro alumno?"));
 
-console.table(students_notes);
+let objeto = JSON.stringify(students_notes);
+alert(objeto);
+console.log(objeto);
+ */
