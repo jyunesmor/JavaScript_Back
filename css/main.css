@@ -1,9 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,600;1,400;1,600&family=Dela+Gothic+One&family=Encode+Sans+SC:wght@200;400&family=M+PLUS+Code+Latin:wght@200;400&family=Oswald:wght@300;400&family=PT+Sans+Narrow:wght@400;700&family=Roboto+Flex:opsz,wght@8..144,200;8..144,400&display=swap");
-/*! Media_Query 1200px */
-/*! Media_Query 900px */
-/*! Media_Query 750px */
-/*! Media_Query 600px */
-/*! Media_Query 450px */
 /* ----- Mixins ----- */
 /* ----- Extends ----- */
 * {
@@ -25,9 +20,10 @@
 * body header .imgLogo {
   width: 25%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 * body header .imgLogo img {
-  margin: auto;
   width: 100px;
   filter: drop-shadow(3px 3px 1px grey);
 }
@@ -90,9 +86,26 @@
   margin: auto;
   display: flex;
 }
-* body main h1 {
+* body main .main_container img {
+  filter: drop-shadow(1.5px 1.5px 2px black);
+}
+* body main .main_container h1 {
   color: brown;
   margin: auto;
+}
+* body main .img_container {
+  display: flex;
+}
+* body main .img_container #images {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 65px;
+  gap: 25px;
+}
+* body main .img_container #images img {
+  margin: auto;
+  width: 200px;
 }
 * body footer {
   width: 100%;
@@ -106,6 +119,7 @@
 * body footer .imgFooter img {
   width: 250px;
   margin: auto;
+  filter: drop-shadow(1.5px 1.5px 2px black);
 }
 * body footer .socialMedia {
   width: 55%;

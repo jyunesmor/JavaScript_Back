@@ -1,43 +1,39 @@
-/*! Media_Query 1200px */
-
 @mixin desktop {
-  @media (901px <=width <=1200px) {
+  @media (1440px <=width <=1800px) {
     @content;
   }
 }
 
-/*! Media_Query 900px */
-
-@mixin notebook {
-  @media (751px <=width <=900px) {
+@mixin laptop {
+  @media (1025px <=width <=1439px) {
     @content;
   }
 }
 
-
-/*! Media_Query 750px */
-
-@mixin tablets {
-  @media (601px <=width <=750px) {
+@mixin TabletLandscape {
+  @media (835px <=width <=1024px) {
     @content;
   }
 }
 
-/*! Media_Query 600px */
-
-@mixin mobile600 {
-  @media (451px <=width <=600px) {
+@mixin TabletPortrait {
+  @media (769px <=width <=834px) {
     @content;
   }
 }
 
-/*! Media_Query 450px */
-
-@mixin mobile {
-  @media (200px <=width <=450px) {
+@mixin MobileLandscape {
+  @media (481px <=width <=768px) {
     @content;
   }
 }
+
+@mixin MobilePortrait {
+  @media (250px <=width <=480px) {
+    @content;
+  }
+}
+
 
 /* ----- Mixins ----- */
 

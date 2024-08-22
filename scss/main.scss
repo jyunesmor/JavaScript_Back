@@ -23,9 +23,10 @@
 			.imgLogo {
 				width: 25%;
 				display: flex;
+				justify-content: center;
+				align-items: center;
 
 				img {
-					margin: auto;
 					width: 100px;
 					filter: drop-shadow(3px 3px 1px grey);
 				}
@@ -103,9 +104,33 @@
 			margin: auto;
 			display: flex;
 
-			h1 {
-				color: brown;
-				margin: auto;
+			.main_container {
+
+				img {
+					filter: drop-shadow(1.5px 1.5px 2px black);
+				}
+
+				h1 {
+					color: brown;
+					margin: auto;
+				}
+			}
+
+			.img_container {
+				display: flex;
+
+				#images {
+					margin: auto;
+					display: flex;
+					flex-wrap: wrap;
+					padding: 65px;
+					gap: 25px;
+
+					img {
+						margin: auto;
+						width: 200px;
+					}
+				}
 			}
 		}
 
@@ -121,6 +146,7 @@
 				img {
 					width: 250px;
 					margin: auto;
+					filter: drop-shadow(1.5px 1.5px 2px black);
 				}
 			}
 

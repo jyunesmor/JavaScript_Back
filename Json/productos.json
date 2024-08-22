@@ -1,0 +1,551 @@
+{
+	"1": {
+		"id": 1,
+		"imagen": "https://i.ibb.co/tY0R00N/Cafe-Molido-Torrado-Intenso-Bonafide500grs.png",
+		"nombre": "Cafe",
+		"marca": "Bonafide",
+		"tipo": "Torrado Molido",
+		"capacidad": "500 grs",
+		"precio": 7206.99
+	},
+	"2": {
+		"id": 2,
+		"imagen": "https://i.ibb.co/3RZLJys/Cafe-Molido-Torrado-La-Planta1-Kg.png",
+		"nombre": "Cafe",
+		"marca": "La Planta",
+		"tipo": "Torrado Molido",
+		"capacidad": "1 Kg",
+		"precio": 15080
+	},
+	"3": {
+		"id": 3,
+		"imagen": "https://i.ibb.co/stykWP6/Cafe-Molido-Torrado-La-Planta250grs.png",
+		"nombre": "Cafe",
+		"marca": "La Planta",
+		"tipo": "Torrado Molido",
+		"capacidad": "250 Grs",
+		"precio": 3945
+	},
+	"4": {
+		"id": 4,
+		"imagen": "https://i.ibb.co/gDmjhxB/Cafe-Molido-Torrado-La-Virginia250grs.png",
+		"nombre": "Cafe",
+		"marca": "La Virginia",
+		"tipo": "Torrado Molido",
+		"capacidad": "250 Grs",
+		"precio": 3386
+	},
+	"5": {
+		"id": 5,
+		"imagen": "https://i.ibb.co/9qp6Pyk/Cafe-Molido-Torrado-Suave-Bonafide500grs.png",
+		"nombre": "Cafe",
+		"marca": "Bonafide",
+		"tipo": "Torrado Molido Suave",
+		"capacidad": "500 grs",
+		"precio": 6599
+	},
+	"6": {
+		"id": 6,
+		"imagen": "https://i.ibb.co/SyJ6v6R/Yerba-Mate-Amanda1kg.png",
+		"nombre": "Yerba",
+		"marca": "Amanda",
+		"tipo": "Selecion Especial",
+		"capacidad": "1 Kgs",
+		"precio": 6599
+	},
+	"7": {
+		"id": 7,
+		"imagen": "https://i.ibb.co/qsLWBbB/Yerba-Mate-La-Tranquera1kg.png",
+		"nombre": "Yerba",
+		"marca": "La Tranquera",
+		"tipo": "Selecion Especial",
+		"capacidad": "1 Kgs",
+		"precio": 6599
+	},
+	"8": {
+		"id": 8,
+		"imagen": "https://i.ibb.co/8bMMC0L/Yerba-Mate-Ma-anita1kg.png",
+		"nombre": "Yerba",
+		"marca": "La Mañanita",
+		"tipo": "Selecion Especial",
+		"capacidad": "1 Kgs",
+		"precio": 6599
+	},
+	"9": {
+		"id": 9,
+		"imagen": "https://i.ibb.co/1JjSpC5/Yerba-Mate-Taragui1kg.png",
+		"nombre": "Yerba",
+		"marca": "Taragui",
+		"tipo": "Elaborada Con Palo",
+		"capacidad": "1 Kgs",
+		"precio": 6599
+	},
+	"10": {
+		"id": 10,
+		"imagen": "https://i.ibb.co/wpKhTKG/Yerba-Mate-Union-Suave1kg.png",
+		"nombre": "Yerba",
+		"marca": "La Union",
+		"tipo": "Suave Liviana",
+		"capacidad": "1 Kgs",
+		"precio": 6599
+	},
+	"11": {
+		"id": 11,
+		"imagen": "https://i.ibb.co/Jt9Dw5S/Yerba-Mate-Verde-Flor1kg.png",
+		"nombre": "Yerba",
+		"marca": "Verde Flor",
+		"tipo": "Elaborada Con Palo",
+		"capacidad": "1 Kgs",
+		"precio": 6599
+	},
+	"12": {
+		"id": 12,
+		"imagen": " https://i.ibb.co/51gdDwG/Leche-Descremada-Check1lts.png",
+		"nombre": "Leche",
+		"marca": "Check",
+		"tipo": "Descremada",
+		"capacidad": "1 Lts",
+		"precio": 6599
+	},
+	"13": {
+		"id": 13,
+		"imagen": "https://i.ibb.co/GC48NL8/Leche-Descremada-Ilolay1lts.png",
+		"nombre": "Leche",
+		"marca": "Ilolay",
+		"tipo": "Descremada",
+		"capacidad": "1 Lts",
+		"precio": 6599
+	},
+	"14": {
+		"id": 14,
+		"imagen": "https://i.ibb.co/FnpGY86/Leche-Descremada-Manfrey1lts.png",
+		"nombre": "Leche",
+		"marca": "Manfrey",
+		"tipo": "Descremada",
+		"capacidad": "1 Lts",
+		"precio": 6599
+	},
+	"15": {
+		"id": 15,
+		"imagen": "https://i.ibb.co/smtHZ0z/Leche-Entera-Check1lts.png",
+		"nombre": "Leche",
+		"marca": "Check",
+		"tipo": "Entera",
+		"capacidad": "1 Lts",
+		"precio": 6599
+	},
+	"16": {
+		"id": 16,
+		"imagen": "https://i.ibb.co/y6ZQkwQ/Leche-Entera-Ilolay1lts.png",
+		"nombre": "Leche",
+		"marca": "Ilolay",
+		"tipo": "Entera",
+		"capacidad": "1 Lts",
+		"precio": 6599
+	},
+	"17": {
+		"id": 17,
+		"imagen": "https://i.ibb.co/xYcgqDJ/Leche-Entera-Las-Tres-Ni-as1lts.png ",
+		"nombre": "Leche",
+		"marca": "Las Tres Niñas",
+		"tipo": "Entera",
+		"capacidad": "1 Lts",
+		"precio": 6599
+	},
+	"18": {
+		"id": 18,
+		"imagen": "https://i.ibb.co/ZL60xFX/Arroz-Largo-Fino-Aliada1kg.png",
+		"nombre": "Fideo",
+		"marca": "Aliada",
+		"tipo": "Largo Fino",
+		"capacidad": "1 Kg",
+		"precio": 6599
+	},
+	"19": {
+		"id": 19,
+		"imagen": "https://i.ibb.co/tq9vYzL/Arroz-Largo-Fino-Dos-Hermanos1kg.png",
+		"nombre": "Fideo",
+		"marca": "Dos Hermanos",
+		"tipo": "Largo Fino",
+		"capacidad": "1 Kg",
+		"precio": 6599
+	},
+	"20": {
+		"id": 20,
+		"imagen": "https://i.ibb.co/vH5cqxR/Arroz-Largo-Fino-Molinos-Ala1kg.png",
+		"nombre": "Fideo",
+		"marca": "Molinos Ala",
+		"tipo": "Largo Fino",
+		"capacidad": "1 Kg",
+		"precio": 6599
+	},
+	"21": {
+		"id": 21,
+		"imagen": "https://i.ibb.co/xC8YWwn/Arroz-Largo-Fino-Vanguardia1kg.png",
+		"nombre": "Fideo",
+		"marca": "Vanguardia",
+		"tipo": "Largo Fino",
+		"capacidad": "1 Kg",
+		"precio": 6599
+	},
+	"22": {
+		"id": 22,
+		"imagen": "https://i.ibb.co/cCvkx05/Arroz-Parboil-Dos-Hermanos1kg.png",
+		"nombre": "Fideo",
+		"marca": "Dos Hermanos",
+		"tipo": "Parboil",
+		"capacidad": "1 Kg",
+		"precio": 6599
+	},
+	"23": {
+		"id": 23,
+		"imagen": "https://i.ibb.co/txnMTYH/Mostachol-Mix-Vegetales-Terrabusi500-Grs.png",
+		"nombre": "Fideo",
+		"marca": "Terrabusi",
+		"tipo": "Mostachol Mix Vegetles",
+		"capacidad": "500 Grs",
+		"precio": 6599
+	},
+	"24": {
+		"id": 24,
+		"imagen": "https://i.ibb.co/G7R3ZR3/Mostachol-Molto500-Grs.png",
+		"nombre": "Fideo",
+		"marca": "Molto",
+		"tipo": "Mostachol",
+		"capacidad": "500 Grs",
+		"precio": 6599
+	},
+	"25": {
+		"id": 25,
+		"imagen": "https://i.ibb.co/3vjmV8C/Tirabuzon-Aliada500-Grs.png",
+		"nombre": "Fideo",
+		"marca": "Aliada",
+		"tipo": "Tirabuzon",
+		"capacidad": "500 Grs",
+		"precio": 6599
+	},
+	"26": {
+		"id": 26,
+		"imagen": "https://i.ibb.co/nDDdXjq/Tirabuzon-Check500-Grs.png",
+		"nombre": "Fideo",
+		"marca": "Check",
+		"tipo": "Tirabuzon",
+		"capacidad": "500 Grs",
+		"precio": 6599
+	},
+	"27": {
+		"id": 27,
+		"imagen": "https://i.ibb.co/j5C7zj7/Tirabuzon-Huevo-Don-Felipe500-Grs.png",
+		"nombre": "Fideo",
+		"marca": "Don Felipe",
+		"tipo": "Tirabuzon de Huevo",
+		"capacidad": "500 Grs",
+		"precio": 6599
+	},
+	"28": {
+		"id": 28,
+		"imagen": "https://i.ibb.co/2FpfT0H/Tirabuzon-Santa-Isabel500-Grs.png",
+		"nombre": "Fideo",
+		"marca": "Santa Isabel",
+		"tipo": "Tirabuzon",
+		"capacidad": "500 Grs",
+		"precio": 6599
+	},
+	"29": {
+		"id": 29,
+		"imagen": "https://i.ibb.co/7nGzGXf/Atun-Al-Aceite-La-Campagnola170grs.png",
+		"nombre": "Atun",
+		"marca": "La Campagnola",
+		"tipo": "Al Aceite",
+		"capacidad": "170 Grs",
+		"precio": 6599
+	},
+	"30": {
+		"id": 30,
+		"imagen": "https://i.ibb.co/c6x77dp/Atun-Al-Natural-Aliada170grs.png",
+		"nombre": "Atun",
+		"marca": "Aliada",
+		"tipo": "Al Natural",
+		"capacidad": "170 Grs",
+		"precio": 6599
+	},
+	"31": {
+		"id": 31,
+		"imagen": "https://i.ibb.co/591ZS5b/Atun-Al-Natural-La-Campagnola170grs.png",
+		"nombre": "Atun",
+		"marca": "La Campagnola",
+		"tipo": "Al Natural",
+		"capacidad": "170 Grs",
+		"precio": 6599
+	},
+	"32": {
+		"id": 32,
+		"imagen": "https://i.ibb.co/K0LmNJm/Lomito-De-Atun-Al-Natural-La-Campagnola170grs.png",
+		"nombre": "Lomito de Atun",
+		"marca": "La Campagnola",
+		"tipo": "Al Natural",
+		"capacidad": "170 Grs",
+		"precio": 6599
+	},
+	"33": {
+		"id": 33,
+		"imagen": "https://i.ibb.co/BzNdCJP/Hamburguesas-Paty-Clasicas4uni.png",
+		"nombre": "Hamburguesas",
+		"marca": "Paty",
+		"tipo": "Clasicas 4 Unidades",
+		"capacidad": "4 Unidades",
+		"precio": 6599
+	},
+	"34": {
+		"id": 34,
+		"imagen": "https://i.ibb.co/9HkXqnc/Hamburguesas-Paty-Clasicas4uni276-Grs.png",
+		"nombre": "Hamburguesas",
+		"marca": "Paty",
+		"tipo": "Clasicas 4 Unidades",
+		"capacidad": "276 Grs",
+		"precio": 6599
+	},
+	"35": {
+		"id": 35,
+		"imagen": "https://i.ibb.co/x2q2Z4z/Hamburguesas-Rancho-Alto4un276-Grs.png",
+		"nombre": "Hamburguesas",
+		"marca": "Rancho Alto",
+		"tipo": "Clasicas 4 Unidades",
+		"capacidad": "276 Grs",
+		"precio": 6599
+	},
+	"36": {
+		"id": 36,
+		"imagen": "https://i.ibb.co/fNt69j1/Hamburguesas-Swift-Clasicas4un320-Grs.png",
+		"nombre": "Hamburguesas",
+		"marca": "Swift",
+		"tipo": "Clasicas 4 Unidades",
+		"capacidad": "320 Grs",
+		"precio": 6599
+	},
+	"37": {
+		"id": 37,
+		"imagen": "https://i.ibb.co/FJ2kh65/Hamburguesas-Swift-Clasicas4uni276-Grs.png",
+		"nombre": "Hamburguesas",
+		"marca": "Swift",
+		"tipo": "Clasicas 4 Unidades",
+		"capacidad": "276 Grs",
+		"precio": 6599
+	},
+	"38": {
+		"id": 38,
+		"imagen": "https://i.ibb.co/6cMQWM3/Hamburguesas-Union-Ganadera4uni276-Grs.png",
+		"nombre": "Hamburguesas",
+		"marca": "Union Ganadera",
+		"tipo": "Clasicas 4 Unidades",
+		"capacidad": "276 Grs",
+		"precio": 6599
+	},
+	"39": {
+		"id": 39,
+		"imagen": "https://i.ibb.co/wYkJ9qF/Harina000-Ca-uelas1kg.png",
+		"nombre": "Harina",
+		"marca": "Cañuelas",
+		"tipo": "Trigo",
+		"capacidad": "1 Kg",
+		"precio": 6599
+	},
+	"40": {
+		"id": 40,
+		"imagen": "https://i.ibb.co/Zh5RVBp/Harina-Integral-Pureza1kg.png",
+		"nombre": "Harina",
+		"marca": "Pureza",
+		"tipo": "Integral",
+		"capacidad": "1 Kg",
+		"precio": 6599
+	},
+	"41": {
+		"id": 41,
+		"imagen": "https://i.ibb.co/WPt1yF3/Harina-Leudante-Chacabuco1kg.png",
+		"nombre": "Harina",
+		"marca": "Chacabuco",
+		"tipo": "Leudante",
+		"capacidad": "1 Kg",
+		"precio": 6599
+	},
+	"42": {
+		"id": 42,
+		"imagen": "https://i.ibb.co/PrWgYRd/Harina-Leudante-Morixe1kg.png",
+		"nombre": "Harina",
+		"marca": "Morixe",
+		"tipo": "Leudante",
+		"capacidad": "1 Kg",
+		"precio": 6599
+	},
+	"43": {
+		"id": 43,
+		"imagen": "https://i.ibb.co/Sn1DPCP/Harina-Trigo0000-Check1kg.png",
+		"nombre": "Harina",
+		"marca": "Check",
+		"tipo": "Trigo",
+		"capacidad": "1 Kg",
+		"precio": 6599
+	},
+	"44": {
+		"id": 44,
+		"imagen": "https://i.ibb.co/nfz1WnZ/Harina-Trigo000-Morixe1kg.png",
+		"nombre": "Harina",
+		"marca": "Morixe",
+		"tipo": "Trigo 000",
+		"capacidad": "1 Kg",
+		"precio": 6599
+	},
+	"45": {
+		"id": 45,
+		"imagen": "https://i.ibb.co/r0JcQzB/Presto-Pronta490.png",
+		"nombre": "Polenta",
+		"marca": "Arcor",
+		"tipo": "Presto Pronta",
+		"capacidad": "490 Grs",
+		"precio": 6599
+	},
+	"46": {
+		"id": 46,
+		"imagen": "https://i.ibb.co/qBdb0gS/Aceite-GIrasol-Ca-uelas1-5-Lts.png",
+		"nombre": "Aceite",
+		"marca": "Cañuelas",
+		"tipo": "Girasol",
+		"capacidad": "1.5 Lts",
+		"precio": 6599
+	},
+	"47": {
+		"id": 47,
+		"imagen": "https://i.ibb.co/GPQRQyH/Aceite-GIrasol-Ca-uelas900-Ml.png",
+		"nombre": "Aceite",
+		"marca": "Cañuelas",
+		"tipo": "Girasol",
+		"capacidad": "900 Ml",
+		"precio": 6599
+	},
+	"48": {
+		"id": 48,
+		"imagen": "https://i.ibb.co/qn9cv0L/Aceite-GIrasol-Legitimo1-5-Lts.png",
+		"nombre": "Aceite",
+		"marca": "Legitimo",
+		"tipo": "Girasol",
+		"capacidad": "1.5 Lts",
+		"precio": 6599
+	},
+	"49": {
+		"id": 49,
+		"imagen": "https://i.ibb.co/Y8jRWt6/Aceite-GIrasol-Legitimo900-Ml.png",
+		"nombre": "Aceite",
+		"marca": "Legitimo",
+		"tipo": "Girasol",
+		"capacidad": "900 Ml",
+		"precio": 6599
+	},
+	"50": {
+		"id": 50,
+		"imagen": "https://i.ibb.co/NmHR1nf/Aceite-GIrasol-Pureza900-Ml.png",
+		"nombre": "Aceite",
+		"marca": "Pureza",
+		"tipo": "Girasol",
+		"capacidad": "900 Ml",
+		"precio": 6599
+	},
+	"51": {
+		"id": 51,
+		"imagen": "https://i.ibb.co/8bJpf1Y/Aceite-Oliva-GIrasol-Natura900-Ml.png",
+		"nombre": "Aceite",
+		"marca": "Natura",
+		"tipo": "Girasol y Oliva",
+		"capacidad": "900 Ml",
+		"precio": 6599
+	},
+	"52": {
+		"id": 52,
+		"imagen": "https://i.ibb.co/1mJJ5F1/Aceite-Oliva-GIrasol-Cocinero1-5-Lts.png",
+		"nombre": "Aceite",
+		"marca": "Cocinero",
+		"tipo": "Girasol y Oliva",
+		"capacidad": "1.5 Lts",
+		"precio": 6599
+	},
+	"53": {
+		"id": 53,
+		"imagen": "https://i.ibb.co/hFLbNMw/Ketchup-La-Campagnola250grs.png",
+		"nombre": "Ketchup",
+		"marca": "La Campagnola",
+		"tipo": "Ketchup",
+		"capacidad": "250 Grs",
+		"precio": 6599
+	},
+	"54": {
+		"id": 54,
+		"imagen": "https://i.ibb.co/qJnBSxx/Ketchup-Natura500grs.png",
+		"nombre": "Ketchup",
+		"marca": "Natura",
+		"tipo": "Ketchup",
+		"capacidad": "500 Grs",
+		"precio": 6599
+	},
+	"55": {
+		"id": 55,
+		"imagen": "https://i.ibb.co/z46nSKY/Mayonesa-Cada-Dia500grs.png",
+		"nombre": "Mayonesa",
+		"marca": "Cada Dia",
+		"tipo": "Mayonesa",
+		"capacidad": "500 Grs",
+		"precio": 6599
+	},
+	"56": {
+		"id": 56,
+		"imagen": "https://i.ibb.co/bX3pQdL/Mayonesa-Ca-uelas500grs.png",
+		"nombre": "Mayonesa",
+		"marca": "Cañuelas",
+		"tipo": "Mayonesa",
+		"capacidad": "500 Grs",
+		"precio": 6599
+	},
+	"57": {
+		"id": 57,
+		"imagen": "https://i.ibb.co/bWPb3vQ/Mayonesa-Mayoliva500grs.png",
+		"nombre": "Mayonesa",
+		"marca": "Mayoliva",
+		"tipo": "Oliva",
+		"capacidad": "500 Grs",
+		"precio": 6599
+	},
+	"58": {
+		"id": 58,
+		"imagen": "https://i.ibb.co/bz6yKmg/Mayonesa-Natura500grs.png",
+		"nombre": "Mayonesa",
+		"marca": "Natura",
+		"tipo": "Mayonesa",
+		"capacidad": "500 Grs",
+		"precio": 6599
+	},
+	"59": {
+		"id": 59,
+		"imagen": "https://i.ibb.co/Ks8SmVM/Mostaza-Natura250grs.png",
+		"nombre": "Mostaza",
+		"marca": "Natura",
+		"tipo": "Mostaza",
+		"capacidad": "250 Grs",
+		"precio": 6599
+	},
+	"60": {
+		"id": 60,
+		"imagen": "https://i.ibb.co/ygtThpQ/Mostaza-Natura500grs.png",
+		"nombre": "Mostaza",
+		"marca": "Natura",
+		"tipo": "Mostaza",
+		"capacidad": "500 Grs",
+		"precio": 6599
+	},
+	"61": {
+		"id": 61,
+		"imagen": "https://i.ibb.co/4j5pWq7/Salsa-Golf-Natura250grs.png",
+		"nombre": "Salsa Golf",
+		"marca": "Natura",
+		"tipo": "Salsa Golf",
+		"capacidad": "250 Grs",
+		"precio": 6599
+	}
+}
