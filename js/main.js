@@ -27,7 +27,6 @@ async function ShowLocation(position) {
 		`https://nominatim.openstreetmap.org/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&format=json`
 	);
 	let data = await response.json();
-	console.log(data);
 	document.getElementById("place").innerHTML = ` Ciudad de ${
 		data.address.city
 	}, ${date.getDate()} de ${convertMonth(
@@ -41,67 +40,123 @@ setInterval(function () {
 	dateFooter.innerHTML = data.toLocaleTimeString();
 }, 1000);
 
-// 1era Pre entrega
-
-const students_notes = [];
-
-function obtencionDatos() {
-	let nombre = prompt("Ingrese el Nombre del Alumno");
-	let alumno = {
-		name: nombre,
-		notes: [],
-		average_note: 0,
-	};
-	cargarNotas(
-		alumno,
-		parseInt(prompt("Ingrese la Cantidad de Notas de " + nombre))
-	);
-}
-
-function cargarNotas(alumno, cantidad) {
-	let notes = [];
-	for (let index = 0; index < cantidad; index++) {
-		let nota = Number(prompt("Ingrese la nota"));
-		notes.push(nota);
-	}
-	// Obtener el Valor total de Notas
-	let total_notes = notes.reduce((total, actual) => total + actual, 0);
-
-	// Obtener Promedio de Notas
-	alumno.average_note = total_notes / cantidad;
-
-	alumno.notes = notes;
-	students_notes.push(alumno);
-}
-
-// Programa
-
-/* do {
-	obtencionDatos();
-} while (window.confirm("Desea Cargar otro alumno?"));
-
-let objeto = JSON.stringify(students_notes);
-alert(objeto); */
-
-const images = document.getElementById("images");
+/* API Json */
 
 const productosJson = await axios.get("../Json/productos.json");
-const product_data = productosJson.data;
 
-Object.entries(productosJson.data).forEach(([key, producto]) => {
-	const img = document.createElement("img");
-	img.src = producto.imagen;
-	images.appendChild(img);
-});
+/* Variables */
+let product = [];
+let products = [];
+let cartProducts = [];
+let quantity = 0;
+let localDataStorage = JSON.parse(localStorage.getItem("productos"));
+console.log(localDataStorage);
 
-const buttom_find = document.getElementById("buttom_find");
+/* DOM */
+let showBtn = document.querySelectorAll(".btn_show");
+let addBtn = document.querySelectorAll(".addProduct");
 
-buttom_find.addEventListener("click", (e) => {
+/* Functions */
+
+function showProducts(products) {
+	const images = document.getElementById("images");
+	Object.entries(products.data).forEach(([key, producto]) => {
+		const img = document.createElement("img");
+		img.src = producto.imagen;
+		images.appendChild(img);
+	});
+}
+
+showProducts(productosJson);
+
+function filterProduct(productsArray, search) {
+	return productsArray.filter((p) => p.nombre.toUpperCase().includes(search));
+}
+
+function showProductFiltered(products) {
+	const images_result = document.getElementById("show_products");
+	images_result.innerHTML = "";
+	products.forEach((p) => {
+		const column = document.createElement("div");
+		column.className = "column";
+		column.innerHTML = `
+			<img src="${p.imagen}">
+			<p>$ ${p.precio}</p>
+			<p>${p.nombre} ${p.marca}</p>
+	    <p>${p.capacidad}</p>
+			<button class="btn_show" id="${p.id}">Ver Producto</button>
+		`;
+		images_result.appendChild(column);
+	});
+	btnShowProducts(products);
+}
+
+function showProduct(product) {
+	document.getElementById("show_products").style.display = "none";
+	const images_result = document.getElementById("show_product");
+	images_result.innerHTML = "";
+	const columnRight = document.createElement("div");
+	const columLeft = document.createElement("div");
+	columnRight.innerHTML = `
+			<img src="${product.imagen}">
+		`;
+	columLeft.innerHTML = `
+			<p>$ ${product.precio}</p>
+			<p>${product.nombre} ${product.marca}</p>
+	    <p>${product.capacidad}</p>
+			<button class="addProduct" id="${product.id}">Agregar a Carrito</button>
+		`;
+	images_result.appendChild(columnRight);
+	images_result.appendChild(columLeft);
+
+	btnAddProduct(product);
+}
+
+function addCart(product) {
+	if (localDataStorage) {
+		localDataStorage.push(product);
+		localStorage.setItem("productos", JSON.stringify(localDataStorage));
+	} else {
+		localStorage.setItem("productos", JSON.stringify(cartProducts));
+	}
+}
+
+function btnShowProducts(products) {
+	showBtn = document.querySelectorAll(".btn_show");
+	showBtn.forEach((boton) => {
+		boton.addEventListener("click", (e) => {
+			let id_btn = e.target.id;
+			let product = products.find((p) => p.id === parseInt(id_btn));
+			showProduct(product);
+		});
+	});
+}
+
+function btnAddProduct(product) {
+	addBtn = document.querySelectorAll(".addProduct");
+	addBtn.forEach((boton) => {
+		boton.addEventListener("click", (e) => {
+			let id_btn = e.target.id;
+			let product = products.find((p) => p.id === parseInt(id_btn));
+			addCart(product);
+		});
+	});
+}
+/* Events */
+
+document.getElementById("input_find").addEventListener("change", (e) => {
 	e.preventDefault();
-	const array_prod = Object.values(product_data);
+
+	const array_prod = Object.values(productosJson.data);
 	const search = document.querySelector("#input_find").value.toUpperCase();
-	const products = array_prod.filter((p) =>
-		p.nombre.toUpperCase().includes(search)
-	);
-	console.log(products);
+
+	products = filterProduct(array_prod, search);
+
+	if (products.length >= 1) {
+		document.querySelector(".img_container").style.display = "none";
+		document.querySelector(".img_container_result").style.display = "block";
+		showProductFiltered(products);
+	} else {
+		document.querySelector(".img_container").style.display = "block";
+	}
 });
