@@ -44,13 +44,15 @@ setInterval(function () {
 
 const productosJson = await axios.get("../Json/productos.json");
 
+/* Local Storage data */
+let localDataStorage = JSON.parse(localStorage.getItem("productos"));
+console.log(localDataStorage);
+
 /* Variables */
 let product = [];
 let products = [];
 let cartProducts = [];
 let quantity = 0;
-let localDataStorage = JSON.parse(localStorage.getItem("productos"));
-console.log(localDataStorage);
 
 /* DOM */
 let showBtn = document.querySelectorAll(".btn_show");
@@ -59,7 +61,7 @@ let addBtn = document.querySelectorAll(".addProduct");
 /* Functions */
 
 function showProducts(products) {
-	const images = document.getElementById("images");
+	let images = document.getElementById("images");
 	Object.entries(products.data).forEach(([key, producto]) => {
 		const img = document.createElement("img");
 		img.src = producto.imagen;
@@ -95,19 +97,47 @@ function showProduct(product) {
 	document.getElementById("show_products").style.display = "none";
 	const images_result = document.getElementById("show_product");
 	images_result.innerHTML = "";
+	const productContainer = document.createElement("div");
+	productContainer.classList.add("containerProduct");
 	const columnRight = document.createElement("div");
-	const columLeft = document.createElement("div");
+	const columnLeft = document.createElement("div");
+	columnRight.classList.add("columnRigth");
+	columnLeft.classList.add("columnLeft");
 	columnRight.innerHTML = `
 			<img src="${product.imagen}">
 		`;
-	columLeft.innerHTML = `
+	columnLeft.innerHTML = `
 			<p>$ ${product.precio}</p>
 			<p>${product.nombre} ${product.marca}</p>
 	    <p>${product.capacidad}</p>
+    <div class="quantity">
+      <span id="minus" class="fa-solid fa-minus"></span>
+      <p id="quantity">${quantity}</p>
+      <span id="plus" class="fa-solid fa-plus"></span>            
+    </div>
 			<button class="addProduct" id="${product.id}">Agregar a Carrito</button>
 		`;
-	images_result.appendChild(columnRight);
-	images_result.appendChild(columLeft);
+	productContainer.appendChild(columnRight);
+	productContainer.appendChild(columnLeft);
+	images_result.appendChild(productContainer);
+
+	let minusButton = document.getElementById("minus");
+	let plusButton = document.getElementById("plus");
+	let quantityElement = document.getElementById("quantity");
+
+	minusButton.addEventListener("click", () => {
+		if (quantity > 1) {
+			quantity--;
+			quantityElement.textContent = quantity;
+			product.quantity = quantity;
+		}
+	});
+
+	plusButton.addEventListener("click", () => {
+		quantity++;
+		quantityElement.textContent = quantity;
+		product.quantity = quantity;
+	});
 
 	btnAddProduct(product);
 }
@@ -142,6 +172,7 @@ function btnAddProduct(product) {
 		});
 	});
 }
+
 /* Events */
 
 document.getElementById("input_find").addEventListener("change", (e) => {
