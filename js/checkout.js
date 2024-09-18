@@ -1,47 +1,76 @@
-/* Local Storage data */
-let localDataStorage = JSON.parse(localStorage.getItem("productos"));
-console.log(localDataStorage);
+import { addToCart, subtractToCart } from "./cartService.js";
 
-let quantity;
+let main_checkout = document.getElementById("main_checkout");
+let counterProductsCart = document.getElementById("counterProductsCart");
 
-function showCart(product) {
-	let main_checkout = document.getElementById("main_checkout");
-
-	product.forEach((p) => {
-		quantity = p.quantity;
-		let productCart = document.createElement("div");
-		productCart.className = "product";
-		productCart.innerHTML = `
-      <img src="${p.imagen}">
-      <p>$ ${p.precio}</p>
-      <p>${p.nombre} ${p.marca}</p>
-      <p>${p.capacidad}</p>
-      <div class="quantity">
-        <span id="minus" class="fa-solid fa-minus"></span>
-        <p id="quantity">${quantity}</p>
-        <span id="plus" class="fa-solid fa-plus"></span>            
-      </div>
-      <button class="addProduct" id="${p.id}"><i class="fa fa-trash" aria-hidden="true"></i></button>
-  `;
-		main_checkout.appendChild(productCart);
-	});
-	let minusButton = document.getElementById("minus");
-	let plusButton = document.getElementById("plus");
-	let quantityElement = document.getElementById("quantity");
-
-	minusButton.addEventListener("click", () => {
-		if (quantity > 1) {
-			quantity--;
-			quantityElement.textContent = quantity;
-			product.quantity = quantity;
-		}
-	});
-
-	plusButton.addEventListener("click", () => {
-		quantity++;
-		quantityElement.textContent = quantity;
-		product.quantity = quantity;
-	});
+function crearTarjetasProductosCarrito() {
+	main_checkout.innerHTML = "";
+	const productos = JSON.parse(localStorage.getItem("productsCart"));
+	if (productos && productos.length > 0) {
+		productos.forEach((producto) => {
+			const newProduct = document.createElement("div");
+			newProduct.classList = "product";
+			newProduct.innerHTML = `
+          <img src=${producto.imagen} alt=${producto.nombre}>
+          <h3>${producto.nombre}</h3>
+          <span>$${producto.precio}</span>
+          <div class="quantityCounter">
+            <button class="fa-solid fa-minus"></button>
+            <span class="quantityElement">${producto.quantity}</span>
+            <button class="fa-solid fa-plus"></button>
+          </div>
+    `;
+			main_checkout.appendChild(newProduct);
+			newProduct
+				.getElementsByTagName("button")[0]
+				.addEventListener("click", (e) => {
+					const quantityElement =
+						e.target.parentElement.getElementsByClassName("quantityElement")[0];
+					quantityElement.innerText = subtractToCart(producto);
+					crearTarjetasProductosCarrito();
+					TotalCartItems();
+					TotalCart();
+				});
+			newProduct
+				.getElementsByTagName("button")[1]
+				.addEventListener("click", (e) => {
+					const quantityElement =
+						e.target.parentElement.getElementsByClassName("quantityElement")[0];
+					quantityElement.innerText = addToCart(producto);
+					TotalCartItems();
+					TotalCart();
+				});
+		});
+	}
+	TotalCart();
 }
 
-showCart(localDataStorage);
+function TotalCart() {
+	const cartStorage = JSON.parse(localStorage.getItem("productsCart"));
+	let totalPrice = 0;
+	totalPriceContent.innerHTML = "";
+	const totalPriceCart = document.createElement("div");
+	if (cartStorage && cartStorage.length > 0) {
+		cartStorage.forEach((p) => {
+			totalPrice += p.precio * p.quantity;
+		});
+	}
+	totalPriceCart.innerHTML = `
+    <p><span>Total del Carrito</span> $ ${totalPrice.toFixed(2)}</p>
+  `;
+	totalPriceContent.appendChild(totalPriceCart);
+}
+
+function TotalCartItems() {
+	const cartStorage = JSON.parse(localStorage.getItem("productsCart"));
+	let totalItems = 0;
+	if (cartStorage && cartStorage.length > 0) {
+		cartStorage.forEach((p) => {
+			totalItems += p.quantity;
+		});
+	}
+
+	counterProductsCart.innerText = totalItems;
+}
+
+crearTarjetasProductosCarrito();

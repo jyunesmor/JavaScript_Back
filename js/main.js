@@ -1,3 +1,5 @@
+import { addToCart } from "./cartService.js";
+
 if (navigator.geolocation) {
 	navigator.geolocation.getCurrentPosition(ShowLocation);
 }
@@ -46,30 +48,35 @@ const productosJson = await axios.get("../Json/productos.json");
 
 /* Local Storage data */
 let localDataStorage = JSON.parse(localStorage.getItem("productos"));
-console.log(localDataStorage);
 
 /* Variables */
-let product = [];
-let products = [];
-let cartProducts = [];
-let quantity = 0;
+let products = Object.values(productosJson.data);
 
 /* DOM */
 let showBtn = document.querySelectorAll(".btn_show");
 let addBtn = document.querySelectorAll(".addProduct");
+const images = document.getElementById("images");
 
 /* Functions */
 
-function showProducts(products) {
-	let images = document.getElementById("images");
-	Object.entries(products.data).forEach(([key, producto]) => {
-		const img = document.createElement("img");
-		img.src = producto.imagen;
-		images.appendChild(img);
+const productsContainer = document.getElementById("images");
+
+function crearTarjetasProductosInicio(productos) {
+	productos.forEach((producto) => {
+		const newProduct = document.createElement("div");
+
+		newProduct.innerHTML = `
+    <img src=${producto.imagen} alt=${producto.nombre}>
+    <h3>${producto.nombre}</h3>
+    <p class="precio">$${producto.precio}</p>
+    <button>Agregar al carrito</button>`;
+		productsContainer.appendChild(newProduct);
+		newProduct
+			.getElementsByTagName("button")[0]
+			.addEventListener("click", () => addToCart(producto));
 	});
 }
-
-showProducts(productosJson);
+crearTarjetasProductosInicio(products);
 
 function filterProduct(productsArray, search) {
 	return productsArray.filter((p) => p.nombre.toUpperCase().includes(search));
@@ -130,6 +137,7 @@ function showProduct(product) {
 			quantity--;
 			quantityElement.textContent = quantity;
 			product.quantity = quantity;
+			product.totalPrice = product.precio * quantity;
 		}
 	});
 
@@ -137,18 +145,10 @@ function showProduct(product) {
 		quantity++;
 		quantityElement.textContent = quantity;
 		product.quantity = quantity;
+		product.totalPrice = product.precio * quantity;
 	});
 
 	btnAddProduct(product);
-}
-
-function addCart(product) {
-	if (localDataStorage) {
-		localDataStorage.push(product);
-		localStorage.setItem("productos", JSON.stringify(localDataStorage));
-	} else {
-		localStorage.setItem("productos", JSON.stringify(cartProducts));
-	}
 }
 
 function btnShowProducts(products) {
@@ -164,6 +164,7 @@ function btnShowProducts(products) {
 
 function btnAddProduct(product) {
 	addBtn = document.querySelectorAll(".addProduct");
+
 	addBtn.forEach((boton) => {
 		boton.addEventListener("click", (e) => {
 			let id_btn = e.target.id;
