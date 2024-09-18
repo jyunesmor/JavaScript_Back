@@ -1,7 +1,7 @@
 import { addToCart, subtractToCart } from "./cartService.js";
 
 let main_checkout = document.getElementById("main_checkout");
-let counterProductsCart = document.getElementById("counterProductsCart");
+let totalPriceContent = document.getElementById("totalPrice");
 
 function crearTarjetasProductosCarrito() {
 	main_checkout.innerHTML = "";
@@ -28,7 +28,6 @@ function crearTarjetasProductosCarrito() {
 						e.target.parentElement.getElementsByClassName("quantityElement")[0];
 					quantityElement.innerText = subtractToCart(producto);
 					crearTarjetasProductosCarrito();
-					TotalCartItems();
 					TotalCart();
 				});
 			newProduct
@@ -37,7 +36,6 @@ function crearTarjetasProductosCarrito() {
 					const quantityElement =
 						e.target.parentElement.getElementsByClassName("quantityElement")[0];
 					quantityElement.innerText = addToCart(producto);
-					TotalCartItems();
 					TotalCart();
 				});
 		});
@@ -56,21 +54,9 @@ function TotalCart() {
 		});
 	}
 	totalPriceCart.innerHTML = `
-    <p><span>Total del Carrito</span> $ ${totalPrice.toFixed(2)}</p>
+    <p><span>Total del Carrito</span> $ ${totalPrice}</p>
   `;
 	totalPriceContent.appendChild(totalPriceCart);
-}
-
-function TotalCartItems() {
-	const cartStorage = JSON.parse(localStorage.getItem("productsCart"));
-	let totalItems = 0;
-	if (cartStorage && cartStorage.length > 0) {
-		cartStorage.forEach((p) => {
-			totalItems += p.quantity;
-		});
-	}
-
-	counterProductsCart.innerText = totalItems;
 }
 
 crearTarjetasProductosCarrito();
