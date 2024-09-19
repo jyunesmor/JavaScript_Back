@@ -42,18 +42,17 @@ setInterval(function () {
 	dateFooter.innerHTML = data.toLocaleTimeString();
 }, 1000);
 
-/* API Json */
+/* API Json y LocalStorage */
 
 const productosJson = await axios.get("../Json/productos.json");
-
-/* Local Storage data */
-let localDataStorage = JSON.parse(localStorage.getItem("productos"));
+const productos = JSON.parse(localStorage.getItem("productsCart"));
 
 /* Variables */
 let products = Object.values(productosJson.data);
 
 /* DOM */
 const productsContainer = document.getElementById("images");
+const totalItemsCart = document.getElementById("totalItemsCart");
 
 /* Functions */
 
@@ -61,7 +60,6 @@ function crearTarjetasProductosInicio(productos) {
 	productsContainer.innerHTML = "";
 	productos.forEach((producto) => {
 		const newProduct = document.createElement("div");
-
 		newProduct.innerHTML = `
     <img src=${producto.imagen} alt=${producto.nombre}>
     <h3>${producto.nombre}</h3>
@@ -70,8 +68,12 @@ function crearTarjetasProductosInicio(productos) {
 		productsContainer.appendChild(newProduct);
 		newProduct
 			.getElementsByTagName("button")[0]
-			.addEventListener("click", () => addToCart(producto));
+			.addEventListener("click", () => {
+				addToCart(producto);
+				numberItemCart();
+			});
 	});
+	numberItemCart();
 }
 
 crearTarjetasProductosInicio(products);
@@ -80,13 +82,22 @@ function filterProduct(productsArray, search) {
 	return productsArray.filter((p) => p.nombre.toUpperCase().includes(search));
 }
 
+function numberItemCart() {
+	/* Local Storage data */
+	let localDataStorage = JSON.parse(localStorage.getItem("productsCart"));
+	const totalItem = Object.values(localDataStorage).reduce(
+		(acc, current) => acc + current.quantity,
+		0
+	);
+	totalItemsCart.innerText = totalItem;
+}
+
 /* Events */
 
 document.getElementById("input_find").addEventListener("change", (e) => {
 	e.preventDefault();
 	const array_prod = Object.values(productosJson.data);
 	const search = document.querySelector("#input_find").value.toUpperCase();
-	console.log(search);
 	const productsfilter = filterProduct(array_prod, search);
 	if (productsfilter.length >= 1) {
 		crearTarjetasProductosInicio(productsfilter);

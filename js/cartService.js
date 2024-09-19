@@ -1,9 +1,5 @@
 /* API Json */
-
 const productosJson = await axios.get("../Json/productos.json");
-
-const products = Object.values(productosJson.data);
-console.log(products);
 
 export function addToCart(product) {
 	//Reviso si el producto está en el carrito.

@@ -54,7 +54,7 @@ function TotalCart() {
 		});
 	}
 	totalPriceCart.innerHTML = `
-    <p><span>Total del Carrito</span> $ ${totalPrice}</p>
+    <p><span>Total del Carrito</span> $ ${totalPrice.toFixed(2)}</p>
   `;
 	totalPriceContent.appendChild(totalPriceCart);
 }
