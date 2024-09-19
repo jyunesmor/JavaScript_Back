@@ -42,6 +42,19 @@ function crearTarjetasProductosCarrito() {
 					quantityElement.innerText = addToCart(producto);
 					TotalCart();
 				});
+			newProduct
+				.getElementsByClassName("fa-trash")[0]
+				.addEventListener("click", (e) => {
+					const productoIndex = productos.findIndex(
+						(p) => p.id === producto.id
+					);
+					if (productoIndex !== -1) {
+						productos.splice(productoIndex, 1);
+						localStorage.setItem("productsCart", JSON.stringify(productos));
+						crearTarjetasProductosCarrito();
+						TotalCart();
+					}
+				});
 		});
 	}
 	TotalCart();
