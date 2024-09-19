@@ -12,13 +12,17 @@ function crearTarjetasProductosCarrito() {
 			newProduct.classList = "product";
 			newProduct.innerHTML = `
           <img src=${producto.imagen} alt=${producto.nombre}>
-          <h3>${producto.nombre}</h3>
+          <div>
+					  <h3>${producto.nombre} ${producto.marca}</h3>
+		      	<p>${producto.tipo} ${producto.capacidad}</p>
+					</div>
           <span>$${producto.precio}</span>
           <div class="quantityCounter">
             <button class="fa-solid fa-minus"></button>
             <span class="quantityElement">${producto.quantity}</span>
             <button class="fa-solid fa-plus"></button>
           </div>
+					<div><i class="fa-solid fa-trash"></i></div>
     `;
 			main_checkout.appendChild(newProduct);
 			newProduct

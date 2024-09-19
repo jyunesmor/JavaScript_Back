@@ -60,10 +60,12 @@ function crearTarjetasProductosInicio(productos) {
 	productsContainer.innerHTML = "";
 	productos.forEach((producto) => {
 		const newProduct = document.createElement("div");
+		newProduct.classList.add("cardProduct");
 		newProduct.innerHTML = `
     <img src=${producto.imagen} alt=${producto.nombre}>
-    <h3>${producto.nombre}</h3>
-    <p class="precio">$${producto.precio}</p>
+    <h3>${producto.nombre} ${producto.marca}</h3>
+		<p>${producto.tipo} ${producto.capacidad}</p>
+    <p class="precio">$ ${producto.precio}</p>
     <button>Agregar al carrito</button>`;
 		productsContainer.appendChild(newProduct);
 		newProduct

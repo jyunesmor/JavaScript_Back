@@ -155,9 +155,24 @@
 					padding: 65px;
 					gap: 25px;
 
-					img {
-						margin: auto;
-						width: 200px;
+					.cardProduct {
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						gap: 10px;
+
+
+						img {
+							aspect-ratio: 4/4;
+							margin: auto;
+							width: 200px;
+						}
+
+						button {
+							font-size: 1.2rem;
+							padding: 5px;
+						}
 					}
 				}
 			}
@@ -168,7 +183,7 @@
 
 				.product {
 					display: grid;
-					grid-template-columns: repeat(4, 1fr);
+					grid-template-columns: repeat(5, 1fr);
 					place-items: center;
 					text-align: center;
 					margin-bottom: 10px;

@@ -135,9 +135,21 @@
   padding: 65px;
   gap: 25px;
 }
-* body main .img_container #images img {
+* body main .img_container #images .cardProduct {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+* body main .img_container #images .cardProduct img {
+  aspect-ratio: 4/4;
   margin: auto;
   width: 200px;
+}
+* body main .img_container #images .cardProduct button {
+  font-size: 1.2rem;
+  padding: 5px;
 }
 * body main #main_checkout {
   display: flex;
@@ -145,7 +157,7 @@
 }
 * body main #main_checkout .product {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   place-items: center;
   text-align: center;
   margin-bottom: 10px;
