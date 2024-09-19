@@ -170,9 +170,20 @@
 						}
 
 						button {
-							font-size: 1.2rem;
-							padding: 5px;
+							font-size: 1.1rem;
+							padding: 10px;
+							color: black;
+							border: none;
+							border-radius: 20px;
+							background-color: rgba(#0097b2, 0.9);
+							box-shadow: 1px 1px 8px black;
 						}
+
+						:hover {
+							background-color: aliceblue;
+							color: black;
+						}
+
 					}
 				}
 			}
@@ -217,11 +228,13 @@
 						.fa-minus {
 							background: none;
 							border: none;
+							cursor: pointer;
 						}
 
 						.fa-plus {
 							background: none;
 							border: none;
+							cursor: pointer;
 						}
 
 						.titleValue {
@@ -230,13 +243,6 @@
 					}
 				}
 
-				.removeProduct {
-					i {
-						font-size: 1.3rem;
-						cursor: pointer;
-						filter: drop-shadow(1px 1px 10px black);
-					}
-				}
 			}
 
 			#infoCart {
@@ -259,7 +265,7 @@
 						text-decoration: none;
 						color: black;
 						border-radius: 20px;
-						background-color: aquamarine;
+						background-color: rgba(#0097b2, 0.9);
 						box-shadow: 1px 1px 8px black;
 					}
 				}

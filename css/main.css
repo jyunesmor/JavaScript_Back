@@ -148,8 +148,17 @@
   width: 200px;
 }
 * body main .img_container #images .cardProduct button {
-  font-size: 1.2rem;
-  padding: 5px;
+  font-size: 1.1rem;
+  padding: 10px;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  background-color: rgba(0, 151, 178, 0.9);
+  box-shadow: 1px 1px 8px black;
+}
+* body main .img_container #images .cardProduct :hover {
+  background-color: aliceblue;
+  color: black;
 }
 * body main #main_checkout {
   display: flex;
@@ -187,18 +196,15 @@
 * body main #main_checkout .product .quantityCounter .fa-minus {
   background: none;
   border: none;
+  cursor: pointer;
 }
 * body main #main_checkout .product .quantityCounter .fa-plus {
   background: none;
   border: none;
+  cursor: pointer;
 }
 * body main #main_checkout .product .quantityCounter .titleValue {
   font-size: 0.9rem;
-}
-* body main #main_checkout .removeProduct i {
-  font-size: 1.3rem;
-  cursor: pointer;
-  filter: drop-shadow(1px 1px 10px black);
 }
 * body main #infoCart {
   display: flex;
@@ -219,7 +225,7 @@
   text-decoration: none;
   color: black;
   border-radius: 20px;
-  background-color: aquamarine;
+  background-color: rgba(0, 151, 178, 0.9);
   box-shadow: 1px 1px 8px black;
 }
 * body footer {
