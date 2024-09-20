@@ -15,11 +15,13 @@
 
 		header {
 			width: 100%;
-			height: 150px;
+			height: auto;
+			padding: 30px;
 			display: flex;
+			flex-direction: column;
 
 			.imgLogo {
-				width: 25%;
+				width: 100%;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -31,11 +33,13 @@
 			}
 
 			.boxMenu {
-				width: 75%;
+				width: 100%;
 				@include flexColumn(flex, column, start, end);
 
 				.dates {
+					width: 100%;
 					display: flex;
+					justify-content: space-between;
 					align-items: center;
 					padding: 20px;
 					margin-right: 10px;
@@ -51,8 +55,7 @@
 				}
 
 				.menu {
-					width: 75%;
-					height: 100%;
+					width: 100%;
 
 					ul {
 						height: 100%;
@@ -92,13 +95,26 @@
 					}
 				}
 			}
+
+			@include TabletLandscape {
+				flex-direction: row;
+			}
+
+			@include laptop {
+				flex-direction: row;
+			}
+
+			@include desktop {
+				flex-direction: row;
+			}
 		}
 
 		main {
-			width: 90%;
+			width: 100%;
 			display: flex;
+			padding: 30px;
+			justify-content: center;
 			flex-direction: column;
-			margin: auto;
 
 			.main_container {
 				img {
@@ -274,11 +290,15 @@
 
 		footer {
 			width: 100%;
-			height: 125px;
+			height: auto;
+			padding: 10px;
 			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			background-color: lightblue;
 
 			.imgFooter {
-				width: 45%;
+				width: 100%;
 				display: flex;
 
 				img {
@@ -289,7 +309,7 @@
 			}
 
 			.socialMedia {
-				width: 55%;
+				width: 100%;
 				margin: auto;
 
 				.mediaList {
@@ -298,19 +318,26 @@
 					width: 100%;
 
 					ul {
+						width: 75%;
+						padding: 10px;
 						display: flex;
-						gap: 45px;
+						justify-content: space-evenly;
 						list-style: none;
 
 						li {
 							a {
 								i {
+									margin: auto;
 									color: burlywood;
 								}
 							}
 						}
 					}
 				}
+			}
+
+			@include laptop {
+				flex-direction: row;
 			}
 		}
 	}
