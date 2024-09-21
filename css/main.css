@@ -115,6 +115,7 @@
   margin: auto;
 }
 * body main #logoCarrito {
+  display: none;
   border-radius: 50%;
   position: fixed;
   right: 10px;
@@ -185,7 +186,7 @@
 }
 * body main #main_checkout .product {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   place-items: center;
   text-align: center;
   margin-bottom: 10px;
@@ -225,6 +226,10 @@
 * body main #main_checkout .product .quantityCounter .titleValue {
   font-size: 0.9rem;
 }
+* body main #main_checkout .TextCartEmpty {
+  font-size: 3rem;
+  text-align: center;
+}
 * body main #infoCart {
   display: flex;
   flex-direction: column;
@@ -236,10 +241,13 @@
   font-size: 1.4rem;
 }
 * body main #infoCart #buttonCart {
+  display: none;
+}
+* body main #infoCart #buttonCart .menuButtons {
   display: flex;
   gap: 60px;
 }
-* body main #infoCart #buttonCart a {
+* body main #infoCart #buttonCart .menuButtons a {
   padding: 15px;
   text-decoration: none;
   color: black;

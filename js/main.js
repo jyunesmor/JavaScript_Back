@@ -50,24 +50,20 @@ const productos = JSON.parse(localStorage.getItem("productsCart"));
 /* Variables */
 let products = Object.values(productosJson.data);
 
-/* DOM */
-const productsContainer = document.getElementById("images");
-const totalItemsCart = document.getElementById("totalItemsCart");
-
 /* Functions */
+let productsContainer = document.querySelector("#images");
 
 function crearTarjetasProductosInicio(productos) {
-	productsContainer.innerHTML = "";
 	productos.forEach((producto) => {
 		const newProduct = document.createElement("div");
-		newProduct.classList.add("cardProduct");
 		newProduct.innerHTML = `
-    <img src=${producto.imagen} alt=${producto.nombre}>
-    <h3>${producto.nombre} ${producto.marca}</h3>
-		<p>${producto.tipo} ${producto.capacidad}</p>
-    <p class="precio">$ ${producto.precio}</p>
-    <button>Agregar al carrito</button>`;
+    	<img src=${producto.imagen} alt=${producto.nombre}/>
+    	<h3>${producto.nombre} ${producto.marca}</h3>
+			<p>${producto.tipo} ${producto.capacidad}</p>
+    	<p class="precio">$ ${producto.precio}</p>
+   	  <button>Agregar al carrito</button>`;
 		productsContainer.appendChild(newProduct);
+		newProduct.classList.add("cardProduct");
 		newProduct
 			.getElementsByTagName("button")[0]
 			.addEventListener("click", () => {
@@ -85,13 +81,17 @@ function filterProduct(productsArray, search) {
 }
 
 function numberItemCart() {
+	const totalItemsCart = document.getElementById("totalItemsCart");
 	/* Local Storage data */
 	let localDataStorage = JSON.parse(localStorage.getItem("productsCart"));
-	const totalItem = Object.values(localDataStorage).reduce(
-		(acc, current) => acc + current.quantity,
-		0
-	);
-	totalItemsCart.innerText = totalItem;
+	if (localDataStorage !== null) {
+		const totalItem = Object.values(localDataStorage).reduce(
+			(acc, current) => acc + current.quantity,
+			0
+		);
+		totalItemsCart.innerText = totalItem;
+		document.getElementById("logoCarrito").style.display = "block";
+	}
 }
 
 /* Events */

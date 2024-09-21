@@ -11,6 +11,7 @@
   <script src="../js/checkout.js" type="module" defer></script>
   <script src="../js/cartService.js" type="module" defer></script>
   <script src="../js/main.js" type="module" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -47,8 +48,11 @@
         <p id="totalPrice"></p>
       </div>
       <div id="buttonCart">
-        <a href="../pages/productos.html">Seguir Comprando</a>
-        <a href="#">Finalizar Compra</a>
+        <div class="menuButtons">
+          <a href="../pages/productos.html">Seguir Comprando</a>
+          <a id="buyCart">Finalizar Compra</a>
+          <a id="removeCart">Vaciar Carrito</a>
+        </div>
       </div>
     </div>
   </main>

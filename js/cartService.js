@@ -5,12 +5,14 @@ export function addToCart(product) {
 	//Reviso si el producto está en el carrito.
 	let cartStorage = JSON.parse(localStorage.getItem("productsCart"));
 	let quantityProduct;
+	let priceProduct;
 
 	//Si no hay localstorage lo creo
 	if (!cartStorage || cartStorage.length === 0) {
 		const nuevoProducto = addQuantityToProduct(product);
 		localStorage.setItem("productsCart", JSON.stringify([nuevoProducto]));
 		quantityProduct = 1;
+		priceProduct = product.precio;
 	} else {
 		//Si hay localstorage me fijo si el artículo ya está ahí
 		const indexProd = cartStorage.findIndex((p) => p.id === product.id);
