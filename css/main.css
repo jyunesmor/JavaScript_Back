@@ -107,12 +107,12 @@
   justify-content: center;
   flex-direction: column;
 }
-* body main .main_container img {
-  filter: drop-shadow(1.5px 1.5px 2px black);
+* body main .main_container {
+  display: flex;
 }
-* body main .main_container h1 {
-  color: brown;
+* body main .main_container img {
   margin: auto;
+  filter: drop-shadow(1.5px 1.5px 2px black);
 }
 * body main #logoCarrito {
   display: none;
@@ -262,7 +262,6 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: lightblue;
 }
 * body footer .imgFooter {
   width: 100%;
