@@ -2,10 +2,11 @@
 
 - 🔭 Proyecto JavaScripts-Flex [SuperCerca](https://projectjavascritpback.netlify.app/)
 
-<img align="center" src="https://i.ibb.co/4jZyVLD/logo700.png" />
+                                              <img align="center" src="https://i.ibb.co/4jZyVLD/logo700.png" />
+
 - Desarrollo
--   Mi Proyecto, esta orientado en la venta de almacen o pequeños almacenes, en la cual el usuario puede elegir entre productos cargados por Json, que a futuro seran ingresdos por Base de Datos.
-- el mismo cuenta con una pagina index, y tres paginas mas de Productos, Checkout y pedidos, toda la interacciones es con JavaScript, y la base de dato se utilizo Axios.
+-   Mi Proyecto, esta orientado en la venta de supermercados o pequeños almacenes, en la cual el usuario puede elegir entre productos cargados por Json, que a futuro seran ingresdos por Base de Datos.
+- el mismo cuenta con una pagina index, y tres pages más de Productos, Checkout y pedidos, toda la interacciones es con JavaScript, y la base de dato se utilizo Axios, los estilos fueron trabajados con SweetAlert 2, FontAnswer Icons, y Sass para el estilo del maquetado.
 -    
 
 <h3 align="left">Connect with me:</h3>
