@@ -1,8 +1,8 @@
 <h1 align="center">Hola 👋, me llamo Juan Manuel Yunes Mor</h1>
-<h3 align="center">A passionate frontend developer from India</h3>
 
 - 🔭 Proyecto JavaScripts-Flex [SuperCerca](https://projectjavascritpback.netlify.app/)
 
+<img align="center" src="https://i.ibb.co/4jZyVLD/logo700.png" />
 - Desarrollo
 -   Mi Proyecto, esta orientado en la venta de almacen o pequeños almacenes, en la cual el usuario puede elegir entre productos cargados por Json, que a futuro seran ingresdos por Base de Datos.
 - el mismo cuenta con una pagina index, y tres paginas mas de Productos, Checkout y pedidos, toda la interacciones es con JavaScript, y la base de dato se utilizo Axios.
