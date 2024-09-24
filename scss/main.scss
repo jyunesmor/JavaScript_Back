@@ -295,6 +295,30 @@
 					}
 				}
 			}
+
+			#main_pedidos {
+				display: flex;
+				flex-direction: column;
+
+				.pedido {
+					display: flex;
+					flex-direction: column;
+					margin-top: 40px;
+				}
+
+				.listaPedidos {
+					display: grid;
+					grid-template-columns: repeat(4, 1fr);
+					place-items: center;
+					row-gap: 15px;
+					margin-top: 25px;
+
+					img {
+						width: 75px;
+					}
+				}
+			}
+
 		}
 
 		footer {
@@ -336,7 +360,7 @@
 							a {
 								i {
 									margin: auto;
-									color: burlywood;
+									color: #0097b2;
 								}
 							}
 						}

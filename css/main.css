@@ -255,6 +255,25 @@
   background-color: rgba(0, 151, 178, 0.9);
   box-shadow: 1px 1px 8px black;
 }
+* body main #main_pedidos {
+  display: flex;
+  flex-direction: column;
+}
+* body main #main_pedidos .pedido {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+* body main #main_pedidos .listaPedidos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  row-gap: 15px;
+  margin-top: 25px;
+}
+* body main #main_pedidos .listaPedidos img {
+  width: 75px;
+}
 * body footer {
   width: 100%;
   height: auto;
@@ -290,7 +309,7 @@
 }
 * body footer .socialMedia .mediaList ul li a i {
   margin: auto;
-  color: burlywood;
+  color: #0097b2;
 }
 @media (1025px <= width <= 1439px) {
   * body footer {

@@ -8,7 +8,7 @@ function crearTarjetasProductosCarrito() {
 	main_checkout.innerHTML = "";
 	const productos = JSON.parse(localStorage.getItem("productsCart"));
 	let totalPrice;
-
+	console.log(productos);
 	if (productos && productos.length > 0) {
 		productos.forEach((producto) => {
 			totalPrice = producto.precio * producto.quantity;
@@ -20,13 +20,13 @@ function crearTarjetasProductosCarrito() {
 					  <h3>${producto.nombre} ${producto.marca}</h3>
 		      	<p>${producto.tipo} ${producto.capacidad}</p>
 					</div>
-          <span>$ ${producto.precio.toFixed(2)}</span>
+          <span>$ ${producto.precio}</span>
           <div class="quantityCounter">
             <button class="fa-solid fa-minus"></button>
             <span class="quantityElement">${producto.quantity}</span>
             <button class="fa-solid fa-plus"></button>
           </div>
-					<span class="totalPriceProd">$ ${totalPrice.toFixed(2)}</span>
+					<span class="totalPriceProd">$ ${totalPrice}</span>
 					<div><i class="fa-solid fa-trash"></i></div>
     `;
 			buttonCart.style.display = "block";
@@ -88,6 +88,7 @@ function TotalCart() {
     <p><span>Total del Carrito</span> $ ${totalPrice.toFixed(2)}</p>
   `;
 	totalPriceContent.appendChild(totalPriceCart);
+	return totalPrice;
 }
 
 const removeCart = document.getElementById("removeCart");
@@ -119,8 +120,9 @@ buyCart.addEventListener("click", (e) => {
 			if (result.isConfirmed) {
 				let pedidoNew = cartStorage;
 				const id = idPedido();
+				const totalPrice = TotalCart();
+				pedidoNew.unshift(totalPrice);
 				pedidoNew.unshift(id);
-
 				if (pedidos) {
 					pedidos.push(pedidoNew);
 					localStorage.setItem("pedidos", JSON.stringify(pedidos));
@@ -130,6 +132,8 @@ buyCart.addEventListener("click", (e) => {
 						"",
 						"success"
 					);
+					localStorage.removeItem("productsCart");
+					location.reload();
 				} else {
 					localStorage.setItem("pedidos", JSON.stringify([pedidoNew]));
 					Swal.fire(
@@ -138,6 +142,8 @@ buyCart.addEventListener("click", (e) => {
 						"",
 						"success"
 					);
+					localStorage.removeItem("productsCart");
+					location.reload();
 				}
 			} else if (result.isDenied) {
 				Swal.fire("Gracias por Visitarnos");
@@ -145,12 +151,6 @@ buyCart.addEventListener("click", (e) => {
 		});
 	}
 });
-
-function addPedido(products) {
-	const newCart = products;
-	newCart.id = idPedido();
-	return newCart;
-}
 
 const idPedido = () => {
 	const date = Date.now().toString(30);

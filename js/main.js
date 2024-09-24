@@ -45,7 +45,6 @@ setInterval(function () {
 /* API Json y LocalStorage */
 
 const productosJson = await axios.get("../Json/productos.json");
-const productos = JSON.parse(localStorage.getItem("productsCart"));
 
 /* Variables */
 let products = Object.values(productosJson.data);
@@ -54,6 +53,7 @@ let products = Object.values(productosJson.data);
 let productsContainer = document.querySelector("#images");
 
 function crearTarjetasProductosInicio(productos) {
+	productsContainer.innerHTML = " ";
 	productos.forEach((producto) => {
 		const newProduct = document.createElement("div");
 		newProduct.innerHTML = `
@@ -101,6 +101,7 @@ document.getElementById("input_find").addEventListener("change", (e) => {
 	const array_prod = Object.values(productosJson.data);
 	const search = document.querySelector("#input_find").value.toUpperCase();
 	const productsfilter = filterProduct(array_prod, search);
+	console.log(productsfilter);
 	if (productsfilter.length >= 1) {
 		crearTarjetasProductosInicio(productsfilter);
 	} else {
