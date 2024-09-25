@@ -118,33 +118,45 @@ buyCart.addEventListener("click", (e) => {
 		}).then((result) => {
 			/* Read more about isConfirmed */
 			if (result.isConfirmed) {
-				let pedidoNew = cartStorage;
-				const id = idPedido();
-				const totalPrice = TotalCart();
-				pedidoNew.unshift(totalPrice);
-				pedidoNew.unshift(id);
-				if (pedidos) {
-					pedidos.push(pedidoNew);
-					localStorage.setItem("pedidos", JSON.stringify(pedidos));
-					Swal.fire(
-						`Gracias por su compra 
+				const { value: dni } = Swal.fire({
+					title: "Ingresa tu DNI",
+					input: "text",
+					inputLabel: "Documento de Identidad",
+					showCancelButton: true,
+					inputValidator: (dni) => {
+						if (!dni) {
+							return "Por Favor Ingresa tu Documento!";
+						} else {
+							let pedidoNew = cartStorage;
+							const id = idPedido(dni);
+							const totalPrice = TotalCart();
+							pedidoNew.unshift(totalPrice);
+							pedidoNew.unshift(id);
+							if (pedidos) {
+								pedidos.push(pedidoNew);
+								localStorage.setItem("pedidos", JSON.stringify(pedidos));
+								Swal.fire(
+									`Gracias por su compra 
 					Pedido N° ${id}`,
-						"",
-						"success"
-					);
-					localStorage.removeItem("productsCart");
-					location.reload();
-				} else {
-					localStorage.setItem("pedidos", JSON.stringify([pedidoNew]));
-					Swal.fire(
-						`Gracias por su compra 
+									"",
+									"success"
+								);
+								localStorage.removeItem("productsCart");
+								location.reload();
+							} else {
+								localStorage.setItem("pedidos", JSON.stringify([pedidoNew]));
+								Swal.fire(
+									`Gracias por su compra 
 					Pedido N° ${id}`,
-						"",
-						"success"
-					);
-					localStorage.removeItem("productsCart");
-					location.reload();
-				}
+									"",
+									"success"
+								);
+								localStorage.removeItem("productsCart");
+								location.reload();
+							}
+						}
+					},
+				});
 			} else if (result.isDenied) {
 				Swal.fire("Gracias por Visitarnos");
 			}
@@ -152,10 +164,15 @@ buyCart.addEventListener("click", (e) => {
 	}
 });
 
-const idPedido = () => {
-	const date = Date.now().toString(30);
-	const number = Math.random().toString(20).substring(2);
-	return date + number;
+const idPedido = (dni) => {
+	const date = new Date();
+	// Obtenemos el año Actual
+	const year = date.getFullYear();
+	// Obtenemos los milisegundos de la compra
+	const miliseconds = date.getTime();
+
+	// se concatena todo y forma nuestro ID unico
+	return year + "_" + dni + "_" + miliseconds;
 };
 
 crearTarjetasProductosCarrito();
